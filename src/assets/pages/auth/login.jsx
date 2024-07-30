@@ -1,10 +1,10 @@
-import PageLoader from "../../components/pageLoader"
+
 import jemmaSign from "../../images/jemmaSign.png"
 import { Link } from "react-router-dom"
 
 const Login = () => {
   return (
-    <div className="flex items-center justify-center" >
+    <div className="flex items-center justify-center overflow-y-hidden" >
     <div className="flex flex-row shadow-lg m-32 ">
       <div>
         <form className=" flex place-content-center text-xl font-serif">
@@ -43,12 +43,9 @@ const Login = () => {
            
             <div className=" flex pl-10">
               <div className="text-center text-white my-8 pb-8 h-10 w-40 px-3 py-2 bg-[#337eff] border-2 rounded-3xl hover:bg-black">
-                <button type="submit">
-                  {isSubmitting ? <PageLoader /> : "Sign in"}
-                </button>
+                <button type="submit">Login</button>
               </div>
             </div>
-
           </div>
         </form>
 
@@ -62,9 +59,7 @@ const Login = () => {
             SIGN UP
           </Link>
         </div>
-        
       </div>
-       
       <div>
       <img src={jemmaSign} alt="signing" className="bottom-right-image "/>
     </div>
