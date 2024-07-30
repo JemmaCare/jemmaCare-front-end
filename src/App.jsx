@@ -39,7 +39,10 @@ function App() {
         ]
       }
       
-    ])
+    ],
+    { path: "/signup", element: <SignUp /> },
+    { path: "/login", element: <LogIn /> },
+  )
 
 
     return <RouterProvider router={router} />
