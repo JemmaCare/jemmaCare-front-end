@@ -1,12 +1,13 @@
 import PageLoader from "../../components/pageLoader"
-
+import jemmaSign from "../../images/jemmaSign.png"
+import { Link } from "react-router-dom"
 
 const Login = () => {
   return (
-    <div className="bg-signUpBg flex items-center justify-center" >
+    <div className="flex items-center justify-center" >
     <div className="flex flex-row shadow-lg m-32 ">
       <div>
-        <form onSubmit={handleSubmit(onSubmit)} className=" flex place-content-center text-xl font-serif">
+        <form className=" flex place-content-center text-xl font-serif">
           <div className="mx-28">
             <div className="m-9">
               <h1>SIGN IN</h1>
@@ -24,12 +25,8 @@ const Login = () => {
               id="email"
               placeholder="email/username"
               className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg "
-              {
-              ...register("email", { required: "email is not provided" })
-              }
             />
-            {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
-
+           
             <label
               htmlFor="password"
               className="block text-black mb-1 ml-4"
@@ -41,11 +38,9 @@ const Login = () => {
               id="password"
               placeholder="password"
               className=" bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
-              {
-              ...register("password", { required: "provide password" })
-              }
+             
             />
-            {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
+           
             <div className=" flex pl-10">
               <div className="text-center text-white my-8 pb-8 h-10 w-40 px-3 py-2 bg-[#337eff] border-2 rounded-3xl hover:bg-black">
                 <button type="submit">
@@ -71,7 +66,7 @@ const Login = () => {
       </div>
        
       <div>
-      <img src={signing} alt="signing" className="bottom-right-image "/>
+      <img src={jemmaSign} alt="signing" className="bottom-right-image "/>
     </div>
     </div>
     

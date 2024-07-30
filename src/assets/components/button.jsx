@@ -1,11 +1,11 @@
-
+import { Link } from "react-router-dom"
 
 const Button = () => {
   return (
     <div>
-<button className="border-black text-white rounded text-3xl">
-Get started
-</button>
+      <Link to="/signUp" className="text-white bg-[#337eff] py-2 px-6 rounded">
+        Get started
+      </Link>
     </div>
   )
 }

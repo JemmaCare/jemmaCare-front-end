@@ -1,5 +1,5 @@
 import PageLoader from "../../components/pageLoader"
-
+import { Link } from "react-router-dom"
 
 const SignUp = () => {
   return (
@@ -17,7 +17,7 @@ const SignUp = () => {
         </div>
 
         <div className="">
-          <form className="[h-500px] w-[500px] flex flex-row place-content-center font-serif" onSubmit={handleSubmit(onSubmit)}  >
+          <form className="[h-500px] w-[500px] flex flex-row place-content-center font-serif" >
             <div>
               <div className="text-center  text-3xl p-3 pt-10">
                 <h1>Sign Up</h1>
@@ -33,11 +33,9 @@ const SignUp = () => {
                 id="name"
                 placeholder="Enter your first name"
                 className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
-                {
-                ...register("firstName", { required: "First name is not provided" })
-                }
+               
               />
-              {errors.firstName && (<p className="text-red-500">{errors.firstName.message}</p>)}
+              
               <label
                 htmlFor="lastName"
                 className="block text-black mb-1 ml-4"
@@ -49,11 +47,9 @@ const SignUp = () => {
                 id="name"
                 placeholder="Enter your last name"
                 className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
-                {
-                ...register("lastName", { required: "Last name is not provided" })
-                }
+                
               />
-              {errors.lastName && (<p className="text-red-500">{errors.lastName.message}</p>)}
+             
               <label
                 htmlFor="otherNames"
                 className="block text-black mb-1 ml-4"
@@ -65,9 +61,7 @@ const SignUp = () => {
                 id="name"
                 placeholder="Enter other names"
                 className=" bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
-                {
-                ...register("otherNames",)
-                }
+               
               />
               <label
                 htmlFor="userName"
@@ -80,18 +74,9 @@ const SignUp = () => {
                 id="true"
                 placeholder="username"
                 className=" bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
-                {
-                ...register("userName", { required: "not provided, minLength: 8" })
-                }
+               
               />
-              {errors.userName && (<p className="text-red-500">{errors.userName.message}</p>)}
-              <div flex items-center gap-x-2>
-                {isUsernameLoading && <Loader />}
-                {usernameAvailable && (<p className="text-green-500">Username is available!</p>
-                )}
-                {usernameNotAvailable && (<p className="text-red-500"> Username is already taken!</p>
-                )}
-              </div>
+            
               <div className="flex flex-col w-full space-y-1"></div>
 
               <label
@@ -106,11 +91,9 @@ const SignUp = () => {
                 placeholder="Enter your email"
                 className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
 
-                {
-                ...register("email", { required: "Email is not provided" })
-                }
+               
               />
-              {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
+              
               <label
                 htmlFor="password"
                 className="block text-black mb-1 ml-4"
@@ -122,11 +105,9 @@ const SignUp = () => {
                 id="password"
                 placeholder="Enter your password"
                 className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
-                {
-                ...register("password", { required: "Password is not provided, minLength:8" })
-                }
+               
               />
-              {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
+             
 
               <div className="flex items-start">
                 <div className="flex items-center h-5">
@@ -140,7 +121,7 @@ const SignUp = () => {
                 <div className="text-center text-white m-4 pb-8 h-10 w-40 px-3 py-2 bg-[#337eff] border-2 rounded-3xl hover:bg-black">
                   <button type="submit"
                   >
-                    {isSubmitting ? <PageLoader/> : "Sign Up"}
+                    <PageLoader/> : "Sign Up"
                   </button>
                 </div>
               </div>
