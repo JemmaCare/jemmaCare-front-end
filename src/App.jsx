@@ -6,6 +6,11 @@ import OurServices from "./assets/pages/ourServices";
 import Therapists from "./assets/pages/therapists";
 import Contact from "./assets/pages/contact";
 import RootLayout from "./assets/layouts/rootLayout";
+import SignUp from "./assets/pages/auth/signUp";
+import Login from "./assets/pages/auth/login";
+
+
+
 
 function App() {
   const router = createBrowserRouter(
@@ -19,7 +24,7 @@ function App() {
 
             element: <LandingPage />,
           },
-
+         
           {
             path: "services",
             element: <OurServices />,
@@ -34,18 +39,21 @@ function App() {
             path: "contact",
             element: <Contact />
           },
+          { path: "/signup", element: <SignUp /> },
+          
+          { path: "/login", element: <Login /> },
 
 
         ]
       }
-      
+
     ],
-    { path: "/signup", element: <SignUp /> },
-    { path: "/login", element: <LogIn /> },
+
+
   )
 
 
-    return <RouterProvider router={router} />
+  return <RouterProvider router={router} />
 
 
 }

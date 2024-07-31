@@ -1,23 +1,14 @@
-import PageLoader from "../../components/pageLoader"
+
 import { Link } from "react-router-dom"
+import jemmaSignUp from "../../images/jemmaSignUp.png"
 
 const SignUp = () => {
   return (
     <div className=" flex items-center justify-center rounded-xl">
       <div className="flex flex-row shadow-lg m-48 ">
 
-        <div className="flex justify-center items-center h-screen bg-[#337eff]">
-          <div className="text-center text-white font-mono text-lg m-20">
-            <h1 className="font-extrabold text-3xl">
-              Welcome!
-            </h1>
-            <p>To keep connected with us please login with your info!</p>
-            <Link to="/login" className="underline">Sign In Here</Link>
-          </div>
-        </div>
-
         <div className="">
-          <form className="[h-500px] w-[500px] flex flex-row place-content-center font-serif" >
+          <form className="[h-500px] w-[500px] flex flex-row place-content-center bg-[#337eff] font-serif" >
             <div>
               <div className="text-center  text-3xl p-3 pt-10">
                 <h1>Sign Up</h1>
@@ -32,7 +23,7 @@ const SignUp = () => {
                 type="text"
                 id="name"
                 placeholder="Enter your first name"
-                className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
                
               />
               
@@ -46,7 +37,7 @@ const SignUp = () => {
                 type="text"
                 id="name"
                 placeholder="Enter your last name"
-                className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
+                className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
                 
               />
              
@@ -60,7 +51,7 @@ const SignUp = () => {
                 type="text"
                 id="name"
                 placeholder="Enter other names"
-                className=" bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
+                className=" bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
                
               />
               <label
@@ -73,7 +64,7 @@ const SignUp = () => {
                 type="text"
                 id="true"
                 placeholder="username"
-                className=" bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
+                className=" bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
                
               />
             
@@ -89,7 +80,7 @@ const SignUp = () => {
                 type="text"
                 id="name"
                 placeholder="Enter your email"
-                className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
+                className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
 
                
               />
@@ -104,12 +95,12 @@ const SignUp = () => {
                 type="password"
                 id="password"
                 placeholder="Enter your password"
-                className="bg-slate-300 h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
+                className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg"
                
               />
              
 
-              <div className="flex items-start">
+              <div className="flex items-start p-4">
                 <div className="flex items-center h-5">
                   <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border " />
                 </div>
@@ -118,12 +109,7 @@ const SignUp = () => {
                 </div>
               </div>
               <div className="flex pl-10">
-                <div className="text-center text-white m-4 pb-8 h-10 w-40 px-3 py-2 bg-[#337eff] border-2 rounded-3xl hover:bg-black">
-                  <button type="submit"
-                  >
-                    <PageLoader/> : "Sign Up"
-                  </button>
-                </div>
+                  <button type="submit" className="text-center text-[#337eff] m-4 pb-8 h-10 w-40 px-3 py-2 bg-white border-2 rounded-3xl hover:bg-gray-400">Sign Up </button>
               </div>
 
             </div>
@@ -131,7 +117,7 @@ const SignUp = () => {
         </div>
 
         <div>
-        <img src={signing} alt="signing" className="bottom-right-image-two" />
+        <img src={jemmaSignUp} alt="signing" className="bottom-right-image-two" />
       </div>
       </div>
      

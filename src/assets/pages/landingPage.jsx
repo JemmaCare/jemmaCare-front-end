@@ -1,7 +1,7 @@
-import Button from "../components/button"
+
 import OurServices from "./ourServices"
 
-
+import { Link } from "react-router-dom"
 const LandingPage = () => {
     return (
       <div className="flex flex-col w-auto h-screen">
@@ -11,7 +11,9 @@ const LandingPage = () => {
       </div>
       <div className="bg-blue-200">
           <OurServices/>
-          <Button/>
+          <Link to="/signUp" className="text-white bg-[#337eff] py-2 px-6 rounded">
+        Get started
+      </Link>
       </div>
   </div>
   
