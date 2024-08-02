@@ -5,9 +5,9 @@ import LandingPage from "./assets/pages/landingPage";
 import OurServices from "./assets/pages/ourServices";
 import Therapists from "./assets/pages/therapists";
 import Contact from "./assets/pages/contact";
-import RootLayout from "./assets/layouts/rootLayout";
 import SignUp from "./assets/pages/auth/signUp";
 import Login from "./assets/pages/auth/login";
+
 
 
 
@@ -15,10 +15,7 @@ import Login from "./assets/pages/auth/login";
 function App() {
   const router = createBrowserRouter(
     [
-      {
-        path: "/",
-        element: <RootLayout />,
-        children: [
+        
           {
             index: true,
 
@@ -42,10 +39,6 @@ function App() {
           { path: "/signup", element: <SignUp /> },
           
           { path: "/login", element: <Login /> },
-
-
-        ]
-      }
 
     ],
 

@@ -45,8 +45,8 @@ const Login = () => {
               </div>
             </form>
           </div>
-          <div className="w-full md:w-1/2">
-            <img src={jemmaSign} alt="signing" className="h-full w-full object-cover rounded-r-lg" />
+          <div className=" md:w-1/2">
+            <img src={jemmaSign} alt="signing" className="h-full object-cover rounded-r-lg" />
           </div>
         </div>
       </div>
