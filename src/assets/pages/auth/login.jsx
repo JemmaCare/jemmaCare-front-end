@@ -1,5 +1,5 @@
+import { BoxIcon } from "lucide-react"
 import jemmaSign from "../../images/jemmaSign.png"
-
 
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
               <div className="w-3/4">
                 <div className="mb-8 text-center">
                   <h1 className="text-3xl font-bold text-white">SIGN IN</h1>
-                  <p className="text-white mt-2">Sign in with Google<br />or use your email</p>
+                  <p className="text-white mt-2"> <BoxIcon/> Sign in with Google<br />or use your email</p>
                 </div>
   
                 <label htmlFor="email" className="block text-white mb-2 ml-4">
