@@ -7,6 +7,8 @@ import Therapists from "./assets/pages/therapists";
 import Contact from "./assets/pages/contact";
 import SignUp from "./assets/pages/auth/signUp";
 import Login from "./assets/pages/auth/login";
+import GoogleSignup from "./assets/pages/googleSignup";
+import ServicesPage from "./assets/pages/servicesPage";
 
 
 
@@ -15,30 +17,39 @@ import Login from "./assets/pages/auth/login";
 function App() {
   const router = createBrowserRouter(
     [
-        
-          {
-            index: true,
 
-            element: <LandingPage />,
-          },
-         
-          {
-            path: "services",
-            element: <OurServices />,
-          },
+      {
+        index: true,
 
-          {
-            path: "therapists",
-            element: <Therapists />,
-          },
+        element: <LandingPage />,
+      },
 
-          {
-            path: "contact",
-            element: <Contact />
-          },
-          { path: "/signup", element: <SignUp /> },
-          
-          { path: "/login", element: <Login /> },
+      {
+        path: "ourservices",
+        element: <OurServices />,
+      },
+
+      {
+        path: "therapists",
+        element: <Therapists />,
+      },
+
+      {
+        path: "contact",
+        element: <Contact />
+      },
+      { path: "/signup", element: <SignUp /> },
+
+      {
+        path: "/login", element: <Login />
+
+      },
+      {
+        path: "/google", element: <GoogleSignup />
+      },
+      {
+        path: "/services", element: <ServicesPage />
+      },
 
     ],
 
