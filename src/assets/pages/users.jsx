@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import UsersCard from "../components/usersCard";
 import user1 from "../images/user1.png";
-import user2 from "../images/user2.png";
+import tpImage from "../images/tpImage.png";
 
 const Users = () => {
   return (
@@ -15,7 +15,7 @@ const Users = () => {
             <UsersCard image={user1} name="User" />
           </Link>
           <Link to="/therapists">
-            <UsersCard image={user2} name="Therapist" />
+            <UsersCard image={tpImage} name="Therapist" />
           </Link>
         </div>
       </div>

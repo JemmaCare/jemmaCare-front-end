@@ -1,6 +1,6 @@
 
 
-const Support = () => {
+const SupportForm = () => {
   return (
     <div>
         <h1>use the need support form from change </h1>
@@ -9,4 +9,4 @@ const Support = () => {
   )
 }
 
-export default Support
+export default SupportForm

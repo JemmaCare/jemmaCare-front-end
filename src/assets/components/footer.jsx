@@ -16,7 +16,7 @@ const Footer = () => {
               placeholder="Input email here"
               className="flex-grow text-black p-2 rounded-l-full border-none focus:outline-none"
             />
-            <Link to="/advice" className="text-white bg-[#337eff] py-2 px-6 rounded">
+            <Link to="/articles" className="flex text-white bg-[#337eff] py-2 px-4 rounded">
             <MailIcon className="mr-2" /> <b>Articles/Newsletter</b> 
           </Link>
           </div>

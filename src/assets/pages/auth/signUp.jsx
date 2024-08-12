@@ -5,7 +5,7 @@ import jemmaSignUp from "../../images/jemmaSignUp.png"
 const SignUp = () => {
   return (
     <div className=" flex items-center justify-center rounded-xl">
-      <div className="flex flex-row shadow-lg m-48 ">
+      <div className="flex flex-row ">
 
         <div className="">
           <form className="[h-500px] w-[500px] flex flex-row place-content-center bg-[#337eff] font-serif" >

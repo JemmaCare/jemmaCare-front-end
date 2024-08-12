@@ -6,7 +6,7 @@ import K from "../constants"
 const Navbar = () => {
     return (
         <div>
-        <div className="flex justify-between px-5p py-10">
+        <div className="flex justify-between px-5p py-10 m-5">
           <span className="w-10 h-10"><img src={jemma} alt="logo" /></span>
           <div className="flex gap-x-16">
             {
