@@ -4,8 +4,8 @@ import jemmaSign from "../../images/jemmaSign.png"
 
 const Login = () => {
     return (
-        <div className="flex items-center justify-center h-screen overflow-hidden bg-gray-100 ">
-        <div className="flex flex-row shadow-lg m-24 bg-white rounded-lg">
+        <div className="flex items-center justify-center h-screen overflow-hidden">
+        <div className="flex flex-row bg-white rounded-lg">
           <div className="w-full md:w-1/2">
             <form className="bg-[#337eff] flex items-center justify-center h-full p-8 text-xl font-serif">
               <div className="w-3/4">

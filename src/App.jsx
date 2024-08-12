@@ -2,13 +2,22 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css'
 
 import LandingPage from "./assets/pages/landingPage";
-import OurServices from "./assets/pages/ourServices";
 import Therapists from "./assets/pages/therapists";
-import Contact from "./assets/pages/contact";
 import SignUp from "./assets/pages/auth/signUp";
 import Login from "./assets/pages/auth/login";
 import GoogleSignup from "./assets/pages/googleSignup";
-import ServicesPage from "./assets/pages/servicesPage";
+import LandingPageTwo from "./assets/pages/landingPageTwo";
+import About from "./assets/pages/about";
+import Support from "./assets/pages/supportForm";
+import Articles from "./assets/pages/adminDashboard/pages/articles";
+
+import AddArticles from "./assets/pages/adminDashboard/pages/addArticles";
+import AddSupport from "./assets/pages/adminDashboard/pages/addSupport";
+import AddReviews from "./assets/pages/adminDashboard/pages/addReviews";
+import AddUser from "./assets/pages/adminDashboard/pages/addUser";
+import AddTherapist from "./assets/pages/adminDashboard/pages/addTherapist";
+import DashboardLayout from "./assets/pages/adminDashboard/layouts";
+import Overview from "./assets/pages/adminDashboard/pages/overview";
 
 
 
@@ -23,20 +32,9 @@ function App() {
 
         element: <LandingPage />,
       },
-
-      {
-        path: "ourservices",
-        element: <OurServices />,
-      },
-
       {
         path: "therapists",
         element: <Therapists />,
-      },
-
-      {
-        path: "contact",
-        element: <Contact />
       },
       { path: "/signup", element: <SignUp /> },
 
@@ -48,7 +46,56 @@ function App() {
         path: "/google", element: <GoogleSignup />
       },
       {
-        path: "/services", element: <ServicesPage />
+        path: "/services", element: <LandingPageTwo />
+      },
+      { path: "/about", element: <About /> },
+      {
+        path: "/support", element: <Support />
+      },
+      {
+        path: "/articles", element: <Articles />
+      },
+      {
+        path: "/admdashboard", element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <Overview />
+          },
+          {
+            path: "articles",
+            element: <Articles />
+          },
+          {
+            path: "articles/add",
+            element: <AddArticles />
+          },
+          {
+            path: "support",
+            element: <Support />
+          },
+          {
+            path: "support/add",
+            element: <AddSupport />
+          },
+          {
+            path: "review/add",
+            element: <AddReviews />
+          },
+          {
+            path: "user/add",
+            element: <AddUser />
+          },
+          {
+            path: "therapists",
+            element: <Therapists />
+          },
+          {
+            path: "therapists/add",
+            element: <AddTherapist />
+          },
+
+        ]
       },
 
     ],
