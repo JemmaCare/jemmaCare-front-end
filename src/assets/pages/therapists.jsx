@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import TherapistsCard from "../components/therapistsCard";
 import josh from "../images/josh.jpg";
 import jolie from "../images/jolie.png";
+import esther from "../images/esther.png"
+import ceo from "../images/ceo.jpg"
+import gracie from "../images/gracie.jpg"
+import reggie from "../images/reggie.jpg"
+import owarewaa from "../images/owarewaa.jpg"
+import marigold from "../images/marigold.jpg"
+import kafui from "../images/kafui.jpg"
+import nuna from "../images/nuna.jpg"
+import nhyira from "../images/nhyira.webp"
+import rich from "../images/rich.jpg"
+import user2 from "../images/user2.png"
 
 const Therapist = () => {
   return (
@@ -23,131 +34,131 @@ const Therapist = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Esther" />
+          <Link to="/esther">
+            <TherapistsCard image={esther} name="Esther" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Ruth" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Josh" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Gracie" />
+          <Link to="/ruth">
+            <TherapistsCard image={ceo} name="Ruth" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="Reggie" />
+            <TherapistsCard image={josh} name="Josh" />
+          </Link>
+          <Link to="/gracie">
+            <TherapistsCard image={gracie} name="Gracie" />
+          </Link>
+          <Link to="/reggie">
+            <TherapistsCard image={reggie} name="Reggie" />
+          </Link>
+          <Link to="/owarewa">
+            <TherapistsCard image={owarewaa} name="Owarewaa" />
           </Link>
           <Link to="/marigold">
-            <TherapistsCard image={josh} name="Owarewaa" />
+            <TherapistsCard image={marigold} name="Marigold" />
+          </Link>
+          <Link to="/kafui">
+            <TherapistsCard image={kafui} name="Kafui" />
+          </Link>
+          <Link to="/nuna">
+            <TherapistsCard image={nuna} name="Nuna" />
+          </Link>
+          <Link to="/rich">
+            <TherapistsCard image={rich} name="Rich" />
+          </Link>
+          <Link to="/nhyira">
+            <TherapistsCard image={nhyira} name="Nhyira" />
+          </Link>
+          <Link to="/owarewaa">
+            <TherapistsCard image={owarewaa} name="Owarewaa" />
+          </Link>
+          <Link to="/rich">
+            <TherapistsCard image={rich} name="Rich" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="Esther" />
+            <TherapistsCard image={josh} name="Josh" />
+          </Link>
+          <Link to="/kafui">
+            <TherapistsCard image={kafui} name="Kafui" />
           </Link>
           <Link to="/marigold">
-            <TherapistsCard image={josh} name="Ruth" />
+            <TherapistsCard image={marigold} name="Marigold" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="Josh" />
+            <TherapistsCard image={esther} name="Esther" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Gracie" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Reggie" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Owarewaa" />
+          <Link to="/ruth">
+            <TherapistsCard image={ceo} name="Ruth" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="Rich" />
+            <TherapistsCard image={josh} name="Josh" />
+          </Link>
+          <Link to="/gracie">
+            <TherapistsCard image={gracie} name="Gracie" />
+          </Link>
+          <Link to="/reggie">
+            <TherapistsCard image={reggie} name="Reggie" />
+          </Link>
+          <Link to="/owarewaa">
+            <TherapistsCard image={owarewaa} name="Owarewaa" />
+          </Link>
+          <Link to="/rich">
+            <TherapistsCard image={rich} name="Rich" />
+          </Link>
+          <Link to="/nhyira">
+            <TherapistsCard image={nhyira} name="Nhyira" />
+          </Link>
+          <Link to="/nuna">
+            <TherapistsCard image={nuna} name="Nuna" />
+          </Link>
+          <Link to="/esther">
+            <TherapistsCard image={esther} name="Esther" />
           </Link>
           <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
+            <TherapistsCard image={marigold} name="Marigold" />
+          </Link>
+          <Link to="/ruth">
+            <TherapistsCard image={ceo} name="Ruth" />
+          </Link>
+          <Link to="/jolie">
+            <TherapistsCard image={jolie} name="Jolie" />
+          </Link>
+          <Link to="/gracie">
+            <TherapistsCard image={gracie} name="Gracie" />
+          </Link>
+          <Link to="/reggie">
+            <TherapistsCard image={reggie} name="Reggie" />
+          </Link>
+          <Link to="/owarewaa">
+            <TherapistsCard image={owarewaa} name="Owarewaa" />
+          </Link>
+          <Link to="/rich">
+            <TherapistsCard image={rich} name="Rich" />
+          </Link>
+          <Link to="/marigold">
+            <TherapistsCard image={marigold} name="Marigold" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="User" />
+            <TherapistsCard image={josh} name="Josh" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
+          <Link to="/kafui">
+            <TherapistsCard image={kafui} name="Kafui" />
           </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Esther" />
+          <Link to="/martin">
+            <TherapistsCard image={user2} name="Martin" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Ruth" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Josh" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Gracie" />
+          <Link to="/reggie">
+            <TherapistsCard image={reggie} name="Reggie" />
           </Link>
           <Link to="/josh">
-            <TherapistsCard image={jolie} name="Reggie" />
+            <TherapistsCard image={josh} name="Josh" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Owarewaa" />
+          <Link to="/gracie">
+            <TherapistsCard image={gracie} name="Gracie" />
           </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Rich" />
+          <Link to="/nuna">
+            <TherapistsCard image={nuna} name="Nuna" />
           </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="User" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Esther" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Ruth" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Josh" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Gracie" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Reggie" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Owarewaa" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Rich" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="User" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Therapist" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Esther" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Ruth" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Josh" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Gracie" />
-          </Link>
-          <Link to="/josh">
-            <TherapistsCard image={jolie} name="Reggie" />
-          </Link>
-          <Link to="/marigold">
-            <TherapistsCard image={josh} name="Owarewaa" />
+          <Link to="/owarewaa">
+            <TherapistsCard image={owarewaa} name="Owarewaa" />
           </Link>
         </div>
       </div>
@@ -157,4 +168,3 @@ const Therapist = () => {
 
 export default Therapist;
 
- 

@@ -3,6 +3,10 @@ const K1 = {
     NAVLINKS: [
 
         {
+            name: "Home",
+            path: "/"
+        },
+        {
             name: "Services",
             path: "/services"
         },
@@ -19,9 +23,10 @@ const K1 = {
             path: "/articles"
         },
         {
-            name: "Testimonialss",
+            name: "Testimonials",
             path: "/testimonials"
         },
+       
     ],
 }
 
