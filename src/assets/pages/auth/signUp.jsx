@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
 import jemmaSignUp from "../../images/jemmaSignUp.png";
-
+import google from "../../images/google.png"
 const SignUp = () => {
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-100">
       <div className="flex flex-col md:flex-row w-full max-w-4xl rounded-xl bg-white shadow-md">
-        
-        {/* Form Section */}
+
+
         <div className="flex flex-col justify-center w-full md:w-1/2 p-6 bg-[#10CC9F]">
           <div className="text-center text-3xl mb-5 text-white">
             <h1>Sign Up</h1>
           </div>
           <form className="space-y-4">
-            <div>
-              <Link to="/google" className="block text-center text-white mb-4">
-                Signup with Google
-              </Link>
-            </div>
+
             <div>
               <label htmlFor="firstName" className="block text-white mb-1">
                 First name
@@ -94,14 +90,21 @@ const SignUp = () => {
               </label>
             </div>
             <div className="flex justify-center">
-              <button type="submit" className="text-[#10CC9F] text-lg font-bold m-4 pb-8 h-10 w-40 px-3 py-2 bg-white border-2 rounded-3xl hover:bg-gray-300">
+              <button type="submit" className="text-[#10CC9F] text-lg font-bold m-4 pb-8 h-10 w-40 px-3 py-2 bg-white border-2 rounded-3xl hover:bg-[#00B0FF] hover:text-white">
                 Sign Up
               </button>
             </div>
+            <div className="flex items-center justify-center gap-3 border border-white rounded-md w-3/4 max-w-xs p-2 mx-auto">
+              <img src={google} alt="google" className="w-8 h-8" />
+              <Link to="/google" className="block text-white text-center">
+                Signup with Google
+              </Link>
+            </div>
+
           </form>
         </div>
 
-        {/* Image Section */}
+
         <div className="flex flex-col justify-center w-full md:w-1/2 p-6">
           <div className="flex justify-center">
             <img src={jemmaSignUp} alt="signing" className="max-w-full h-auto" />
