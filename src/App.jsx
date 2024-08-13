@@ -21,8 +21,8 @@ import Reviews from "./assets/pages/adminDashboard/pages/reviews";
 
 
 import TherapistLogin from "./assets/pages/auth/therapistLogin";
-import AdmSignUp from "./assets/auth/admSignUp";
-import AdmLogin from "./assets/auth/admLogin";
+
+
 import RootLayout from "./assets/layouts/rootLayout";
 import Services from "./assets/pages/services";
 import About from "./assets/pages/about";
@@ -85,14 +85,6 @@ function App() {
         children: [
           {
             index: true,
-            element: <AdmSignUp />
-          },
-          {
-            path: "admlogin",
-            element: <AdmLogin/>
-          },
-          {
-            path: "overview",
             element: <Overview />
           },
           {
