@@ -27,6 +27,18 @@ import RootLayout from "./assets/layouts/rootLayout";
 import Services from "./assets/pages/services";
 import About from "./assets/pages/about";
 import Testimonials from "./assets/pages/testimonials";
+import Esther from "./assets/pages/pages/esther";
+import Ruth from "./assets/pages/pages/ruth";
+import Rich from "./assets/pages/pages/rich";
+import Reggie from "./assets/pages/pages/reggie";
+import Owarewaa from "./assets/pages/pages/owarewaa";
+import Nuna from "./assets/pages/pages/nuna";
+import Nhyira from "./assets/pages/pages/nhyira";
+import Martin from "./assets/pages/pages/martin";
+import Marigold from "./assets/pages/pages/marigold";
+import Kafui from "./assets/pages/pages/kafui";
+import Josh from "./assets/pages/pages/josh";
+import Gracie from "./assets/pages/pages/gracie";
 
 
 
@@ -126,6 +138,55 @@ function App() {
 
         ]
       },
+      {
+        path: "esther",
+        element: <Esther/>
+      },
+      {
+        path: "gracie",
+        element: <Gracie/>
+      },
+      {
+        path: "josh",
+        element: <Josh/>
+      },
+      {
+        path: "kafui",
+        element: <Kafui/>
+      },
+      {
+        path: "marigold",
+        element: <Marigold/>
+      },
+      {
+        path: "martin",
+        element: <Martin/>
+      },
+      {
+        path: "nhyira",
+        element: <Nhyira/>
+      },
+      {
+        path: "nuna",
+        element: <Nuna/>
+      },
+      {
+        path: "owarewaa",
+        element: <Owarewaa/>
+      },
+      {
+        path: "reggie",
+        element: <Reggie/>
+      },
+      {
+        path: "rich",
+        element: <Rich/>
+      },
+      {
+        path: "ruth",
+        element: <Ruth/>
+      },
+
 
     ],
 
