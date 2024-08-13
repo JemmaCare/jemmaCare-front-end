@@ -11,3 +11,4 @@ const TherapistsCard = ({ image, name }) => {
     </div>
   );
 };
+export default TherapistsCard;
