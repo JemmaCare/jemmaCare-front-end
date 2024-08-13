@@ -1,14 +1,13 @@
 
-
-const TherapistsCard = ({ name, image }) => {
+const TherapistsCard = ({ image, name }) => {
   return (
-    <div className="relative h-[100px] w-full sm:w-[200px] p-4">
-      <div className="flex justify-center items-center h-full">
-        <img className="h-auto max-h-full w-auto max-w-full rounded-full" src={image} alt={name} />
-        <p className="absolute bottom-4 text-black font-bold text-lg sm:text-2xl">{name}</p>
-      </div>
+    <div className="flex flex-col items-center">
+      <img
+        src={image}
+        alt={name}
+        className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full object-cover"
+      />
+      <h4 className="mt-4 text-center text-lg font-semibold">{name}</h4>
     </div>
   );
 };
-
-export default TherapistsCard;

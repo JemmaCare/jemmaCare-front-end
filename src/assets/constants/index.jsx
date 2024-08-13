@@ -1,6 +1,5 @@
 
-
-const K = {
+const K1 = {
     NAVLINKS: [
 
         {
@@ -20,10 +19,12 @@ const K = {
             path: "/articles"
         },
         {
-            name: "Reviews",
-            path: "/reviews"
+            name: "Testimonialss",
+            path: "/testimonials"
         },
     ],
 }
 
-export default K
+
+
+export default K1
