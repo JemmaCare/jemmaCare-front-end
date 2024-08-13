@@ -6,17 +6,17 @@ import tpImage from "../images/tpImage.png";
 const Users = () => {
   return (
     <>
-      <div className="px-4 sm:px-10 py-10">
-        <div>
-          <h3 className="font-bold text-lg sm:text-2xl"></h3>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-5">
-          <Link to="/support">
-            <UsersCard image={user1} name="User" />
-          </Link>
-          <Link to="/therapists">
-            <UsersCard image={tpImage} name="Therapist" />
-          </Link>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h3 className="font-bold text-lg sm:text-2xl text-center mb-8">Start Out Here</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <Link to="/signup">
+              <UsersCard image={user1} name="User" />
+            </Link>
+            <Link to="/therapists">
+              <UsersCard image={tpImage} name="Therapist" />
+            </Link>
+          </div>
         </div>
       </div>
     </>

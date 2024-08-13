@@ -6,8 +6,7 @@ import Therapists from "./assets/pages/therapists";
 import SignUp from "./assets/pages/auth/signUp";
 import Login from "./assets/pages/auth/login";
 import GoogleSignup from "./assets/pages/googleSignup";
-import LandingPageTwo from "./assets/pages/landingPageTwo";
-import About from "./assets/pages/about";
+
 import Support from "./assets/pages/supportForm";
 import Articles from "./assets/pages/adminDashboard/pages/articles";
 
@@ -18,6 +17,16 @@ import AddUser from "./assets/pages/adminDashboard/pages/addUser";
 import AddTherapist from "./assets/pages/adminDashboard/pages/addTherapist";
 import DashboardLayout from "./assets/pages/adminDashboard/layouts";
 import Overview from "./assets/pages/adminDashboard/pages/overview";
+import Reviews from "./assets/pages/adminDashboard/pages/reviews";
+
+
+import TherapistLogin from "./assets/pages/auth/therapistLogin";
+import AdmSignUp from "./assets/auth/admSignUp";
+import AdmLogin from "./assets/auth/admLogin";
+import RootLayout from "./assets/layouts/rootLayout";
+import Services from "./assets/pages/services";
+import About from "./assets/pages/about";
+import Testimonials from "./assets/pages/testimonials";
 
 
 
@@ -26,11 +35,32 @@ import Overview from "./assets/pages/adminDashboard/pages/overview";
 function App() {
   const router = createBrowserRouter(
     [
+      { path: "/",
+        element:
+        <RootLayout/>,
+        children: [
+          {
 
-      {
-        index: true,
-
-        element: <LandingPage />,
+            index: true,
+    
+            element: <LandingPage />,
+          },
+          {
+            path: "about", element: <About/>
+          },
+          {
+            path: "/services", element: <Services/>
+          },
+          {
+            path: "/support", element: <Support />
+          },
+          {
+            path: "/articles", element: <Articles />
+          },
+          {
+            path: "/testimonials", element: <Testimonials/>
+          },
+        ]
       },
       {
         path: "therapists",
@@ -42,24 +72,27 @@ function App() {
         path: "/login", element: <Login />
 
       },
+
+      {
+        pah: "/therapistlogin",
+        element: <TherapistLogin />
+      },
       {
         path: "/google", element: <GoogleSignup />
-      },
-      {
-        path: "/services", element: <LandingPageTwo />
-      },
-      { path: "/about", element: <About /> },
-      {
-        path: "/support", element: <Support />
-      },
-      {
-        path: "/articles", element: <Articles />
       },
       {
         path: "/admdashboard", element: <DashboardLayout />,
         children: [
           {
             index: true,
+            element: <AdmSignUp />
+          },
+          {
+            path: "admlogin",
+            element: <AdmLogin/>
+          },
+          {
+            path: "overview",
             element: <Overview />
           },
           {
@@ -77,6 +110,10 @@ function App() {
           {
             path: "support/add",
             element: <AddSupport />
+          },
+          {
+            path: "review",
+            element: <Reviews />
           },
           {
             path: "review/add",
