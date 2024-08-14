@@ -1,39 +1,71 @@
-import jemma from "../images/jemmaLogo.png";
-import K2 from "../constants/index"
-import { Link } from "react-router-dom";
+import { ArrowTopRightOnSquareIcon, BuildingStorefrontIcon, CalendarDaysIcon, PhotoIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { CreditCardIcon } from '@heroicons/react/24/outline';
+import { LogOut, UserCheck } from 'lucide-react';
 
 const Sidebar = () => {
     return (
-        <div className="h-full w-[300px] bg-gradient-to-b from-blue-500 to-blue-900 shadow-2xl flex flex-col px-8 py-12 text-white">
+        <div className='min-h-full max-h-screen flex'>
+            <div className="m-4 bg-black border border-white h-full shadow-lg w-64 flex flex-col justify-between rounded-xl">
+                <h3 className='text-teal-500 text-xl font-bold mt-10 ml-5'>Jemma Care</h3>
+                <div className="flex py-6">
+                    <ul className="space-y-2 w-full">
 
-            <div className="w-[80px] ml-10 mb-5 text-2xl font-bold">
+                       
 
-                <img src={jemma} alt="logo" /> JemmaCare
+                        <Link to='/admdashboard'>
+                            <li className="flex items-center text-white text-[18px] space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                <UserCircleIcon size className='size-8' />
+                                <span>Overview</span>
+                            </li>
+                        </Link>
+                        <Link to='/admdashboard/therapists'>
+                            <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                <CreditCardIcon size className='size-7' />
+                                <span>Therapists</span>
+                            </li>
+                        </Link>
+
+                        <Link to='/admdashboard/support'>
+                            <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                < UserCheck className=' hover:text-black' />
+
+                                <span>Support</span>
+                            </li>
+                        </Link>
+
+                        <Link to='/admdashboard/reviews'>
+                            <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                <ShoppingBagIcon size className='size-7' />
+                                <span>Testimonials</span>
+                            </li>
+                        </Link>
+                        <Link to='/admdashboard/user'>
+                            <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                <PhotoIcon size className='size-7' />
+                                <span>User</span>
+                            </li>
+                        </Link>
+                        <Link to='/admdashboard/articles'>
+                            <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
+                                <CalendarDaysIcon size className='size-7' />
+                                <span>Articles</span>
+                            </li>
+                        </Link>
+                       
+
+                    </ul>
+                </div>
+                <Link to="/">
+                    <div className='flex justify-between flex-row px-4 py-2 bg-white rounded-b-xl text-[#304A70]'>
+                        <span>Logout</span>
+                        <LogOut />
+                    </div>
+                </Link>
+
 
             </div>
-            <div className="flex flex-col gap-y-5 mt-5">
-                {K2.NAVLINKS.map(({ icon, text, link }, index) => (
-                    <Link
-                        to={link}
-                        key={index}
-                        className="flex gap-x-4 items-center hover:bg-blue-600 hover:rounded-md p-2"
-                    >
-                        <span className="p-2 rounded-full">
-                            {icon}
-                        </span>
-                        <span>{text}</span>
-                    </Link>
-                ))}
-            </div>
-            <button className="focus:outline-none mt-auto">
-                {/* Uncomment and customize this section if you have a logout button or additional footer items
-        <div className="flex items-center mt-5 gap-7">
-          <LogOut className="bg-slate-500 rounded-full w-10 text-white" />
-          <span className="hover:bg-blue-600 hover:rounded-md p-2">Logout</span>
-        </div> */}
-            </button>
         </div>
     );
-};
-
-export default Sidebar;
+}
+export default Sidebar

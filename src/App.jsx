@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css'
 
 import LandingPage from "./assets/pages/landingPage";
-import Therapists from "./assets/pages/therapists";
 import SignUp from "./assets/pages/auth/signUp";
 import Login from "./assets/pages/auth/login";
 import GoogleSignup from "./assets/pages/googleSignup";
@@ -14,8 +13,7 @@ import AddArticles from "./assets/pages/adminDashboard/pages/addArticles";
 import AddSupport from "./assets/pages/adminDashboard/pages/addSupport";
 import AddReviews from "./assets/pages/adminDashboard/pages/addReviews";
 import AddUser from "./assets/pages/adminDashboard/pages/addUser";
-import AddTherapist from "./assets/pages/adminDashboard/pages/addTherapist";
-import DashboardLayout from "./assets/pages/adminDashboard/layouts";
+
 import Overview from "./assets/pages/adminDashboard/pages/overview";
 import Reviews from "./assets/pages/adminDashboard/pages/reviews";
 
@@ -39,12 +37,16 @@ import Marigold from "./assets/pages/pages/marigold";
 import Kafui from "./assets/pages/pages/kafui";
 import Josh from "./assets/pages/pages/josh";
 import Gracie from "./assets/pages/pages/gracie";
+import SupportGroup from "./assets/pages/adminDashboard/pages/supportGroup";
+import Therapist from "./assets/pages/therapist";
+import AdmDashboardLayout from "./assets/pages/adminDashboard/layouts";
+import AddTherapists from "./assets/pages/adminDashboard/pages/addTherapists";
+import Therapists from "./assets/pages/adminDashboard/pages/therapists";
+import User from "./assets/pages/adminDashboard/pages/user";
+import OnboardingForms from "./assets/pages/onboardingForms";
 
 
 
-
-
-function App() {
   const router = createBrowserRouter(
     [
       { path: "/",
@@ -64,7 +66,7 @@ function App() {
             path: "/services", element: <Services/>
           },
           {
-            path: "/support", element: <Support />
+            path: "/supportform", element: <Support />
           },
           {
             path: "/articles", element: <Articles />
@@ -75,8 +77,8 @@ function App() {
         ]
       },
       {
-        path: "therapists",
-        element: <Therapists />,
+        path: "therapist",
+        element: <Therapist />,
       },
       { path: "/signup", element: <SignUp /> },
 
@@ -93,7 +95,7 @@ function App() {
         path: "/google", element: <GoogleSignup />
       },
       {
-        path: "/admdashboard", element: <DashboardLayout />,
+        path: "/admdashboard", element: <AdmDashboardLayout />,
         children: [
           {
             index: true,
@@ -108,8 +110,8 @@ function App() {
             element: <AddArticles />
           },
           {
-            path: "support",
-            element: <Support />
+            path: "supportgroup",
+            element: <SupportGroup/>
           },
           {
             path: "support/add",
@@ -124,16 +126,20 @@ function App() {
             element: <AddReviews />
           },
           {
+            path: "user",
+            element: <User/>
+          },
+          {
             path: "user/add",
             element: <AddUser />
           },
           {
             path: "therapists",
-            element: <Therapists />
+            element: <Therapists/>
           },
           {
             path: "therapists/add",
-            element: <AddTherapist />
+            element: <AddTherapists/>
           },
 
         ]
@@ -186,16 +192,20 @@ function App() {
         path: "ruth",
         element: <Ruth/>
       },
+      {
+        path: "onboarding",
+        element: <OnboardingForms/>
+      },
 
+    ])
 
-    ],
+  function App() {
+  return (
+  <>
+  <RouterProvider router={router} />
 
-
+  </>
   )
-
-
-  return <RouterProvider router={router} />
-
 
 }
 

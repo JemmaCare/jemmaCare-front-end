@@ -5,7 +5,7 @@ import ceo from "../images/ceo.jpg";
 const SupportForm = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden items-center">
-      {/* Hero Section */}
+     
       <div className="w-full relative">
         <img src={bgImageThree} alt="background" className="w-full h-auto object-cover" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50 p-4">
@@ -17,7 +17,6 @@ const SupportForm = () => {
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="flex flex-col items-center text-center w-11/12 sm:w-3/4 my-8">
         <h2 className="text-lg sm:text-xl mb-4">
           At JemmaCare, we ensure that everyone has the mental health support<br />
@@ -40,7 +39,6 @@ const SupportForm = () => {
           </div>
         </div>
 
-        {/* Support Form */}
         <form className="w-full sm:w-3/4 bg-white p-6 shadow-lg rounded-md">
           <div className="flex flex-col space-y-4">
             <div>

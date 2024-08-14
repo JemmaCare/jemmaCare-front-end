@@ -1,6 +1,6 @@
 import jemma from "../images/jemmaLogo.png";
 import { Link } from "react-router-dom";
-import K1 from "../constants";
+import K from "../constants";
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
           <img src={jemma} alt="logo" />
         </span>
         <div className="flex gap-x-5">
-          {K1.NAVLINKS.map((item, index) => {
+          {K.NAVLINKS.map((item, index) => {
             return (
               <Link
                 key={index}

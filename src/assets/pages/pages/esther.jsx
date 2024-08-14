@@ -20,7 +20,7 @@ const Esther = () => {
                     <Link to="tel:+233547978203" aria-label="Call Esther">
                         <PhoneCall className="w-6 h-6 text-gray-600 hover:text-[#10CC9F]" />
                     </Link>
-                    <Link to="https://calendar.google.com/calendar/embed?src=ruth.agbozo.93%40gmail.com&ctz=Africa%2FAbidjan" aria-label="Schedule with Esther">
+                    <Link to="/onboarding" aria-label="Schedule with Esther">
                         <Calendar className="w-6 h-6 text-gray-600 hover:text-[#10CC9F]" />
                     </Link>
                 </div>

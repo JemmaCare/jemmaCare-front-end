@@ -13,7 +13,7 @@ const Users = () => {
             <Link to="/signup">
               <UsersCard image={user1} name="User" />
             </Link>
-            <Link to="/therapists">
+            <Link to="/therapist">
               <UsersCard image={tpImage} name="Therapist" />
             </Link>
           </div>
