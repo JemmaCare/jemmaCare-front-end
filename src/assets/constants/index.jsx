@@ -17,7 +17,7 @@ const K = {
         },
         {
             name: "Support Groups",
-            path: "/support"
+            path: "/supportform"
         },
         {
             name: "Articles",
@@ -52,7 +52,7 @@ const K = {
         },
         {
             icon: <RadioReceiver />,
-            text: "Reviews",
+            text: "Testimonials",
             total: 5,
         },
         {

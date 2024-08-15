@@ -11,14 +11,11 @@ import Articles from "./assets/pages/adminDashboard/pages/articles";
 
 import AddArticles from "./assets/pages/adminDashboard/pages/addArticles";
 import AddSupport from "./assets/pages/adminDashboard/pages/addSupport";
-import AddReviews from "./assets/pages/adminDashboard/pages/addReviews";
+
 import AddUser from "./assets/pages/adminDashboard/pages/addUser";
 
-import Overview from "./assets/pages/adminDashboard/pages/overview";
-import Reviews from "./assets/pages/adminDashboard/pages/reviews";
+import Overview from "./assets/pages/adminDashboard/pages/testimonial";
 
-
-import TherapistLogin from "./assets/pages/auth/therapistLogin";
 
 
 import RootLayout from "./assets/layouts/rootLayout";
@@ -44,6 +41,14 @@ import AddTherapists from "./assets/pages/adminDashboard/pages/addTherapists";
 import Therapists from "./assets/pages/adminDashboard/pages/therapists";
 import User from "./assets/pages/adminDashboard/pages/user";
 import OnboardingForms from "./assets/pages/onboardingForms";
+import TherapistOnboarding from "./assets/pages/therapistOnboarding";
+import TherapistLogin from "./assets/pages/auth/therapistLogin";
+import Appointment from "./assets/pages/appointment";
+import DateTimePicker from "./assets/pages/dateTimePicker";
+import CommunicationMethod from "./assets/pages/communicationMethod";
+import AddTestimonial from "./assets/pages/adminDashboard/pages/addTestimonial";
+import Testimonial from "./assets/pages/adminDashboard/pages/testimonial";
+
 
 
 
@@ -86,11 +91,6 @@ import OnboardingForms from "./assets/pages/onboardingForms";
         path: "/login", element: <Login />
 
       },
-
-      {
-        pah: "/therapistlogin",
-        element: <TherapistLogin />
-      },
       {
         path: "/google", element: <GoogleSignup />
       },
@@ -118,12 +118,12 @@ import OnboardingForms from "./assets/pages/onboardingForms";
             element: <AddSupport />
           },
           {
-            path: "review",
-            element: <Reviews />
+            path: "testimonial",
+            element: <Testimonial />
           },
           {
-            path: "review/add",
-            element: <AddReviews />
+            path: "testimonial/add",
+            element: <AddTestimonial />
           },
           {
             path: "user",
@@ -196,6 +196,27 @@ import OnboardingForms from "./assets/pages/onboardingForms";
         path: "onboarding",
         element: <OnboardingForms/>
       },
+      {
+        path: "therapistonboarding",
+        element: <TherapistOnboarding/>
+      },
+      {
+        path: "therapistlogin",
+        element: <TherapistLogin/>
+      },
+      {
+        path: "appointment",
+        element: <Appointment/>
+      },
+      {
+        path: "datetime",
+        element: <DateTimePicker/>
+      },
+      {
+        path: "communication",
+        element: <CommunicationMethod/>
+      },
+
 
     ])
 

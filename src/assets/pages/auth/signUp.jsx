@@ -1,7 +1,46 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import jemmaSignUp from "../../images/jemmaSignUp.png";
 import google from "../../images/google.png"
+import { useForm } from "react-hook-form";
+import { apiSignUp } from "../../../services/auth";
+import { useState } from "react";
+import { toast } from "react-toastify";
+
 const SignUp = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+const navigate=useNavigate()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors } } = useForm();
+
+    const onSubmit = async (data) => {
+      console.log(data);
+      setIsSubmitting(true)
+      let payload = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        username: data.username,
+        password: data.password,
+        email: data.email,
+        termsAndConditions: data.termsAndConditions,
+      };
+      
+      try {
+        const res = await apiSignUp(payload);
+        console.log(res.data)
+        toast.success(res.data.message)
+        navigate("/onboarding")
+        
+      } catch (error) { 
+        console.log(error)
+        toast.error("An error occured")
+      } finally {
+        setIsSubmitting(false)
+      }
+    };
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-100">
       <div className="flex flex-col md:flex-row w-full max-w-4xl rounded-xl bg-white shadow-md">
@@ -11,7 +50,7 @@ const SignUp = () => {
           <div className="text-center text-3xl mb-5 text-white">
             <h1>Sign Up</h1>
           </div>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
 
             <div>
               <label htmlFor="firstName" className="block text-white mb-1">
@@ -22,7 +61,11 @@ const SignUp = () => {
                 id="firstName"
                 placeholder="Enter your first name"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                {
+                  ...register("firstName", { required: "First name is not provided" })
+                  }
               />
+              {errors.firstName && (<p className="text-red-500">{errors.firstName.message}</p>)}
             </div>
             <div>
               <label htmlFor="lastName" className="block text-white mb-1">
@@ -33,29 +76,27 @@ const SignUp = () => {
                 id="lastName"
                 placeholder="Enter your last name"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                {
+                  ...register("lastName", { required: "Last name is not provided" })
+                  }
               />
+              {errors.lastName && (<p className="text-red-500">{errors.lastName.message}</p>)}
             </div>
-            <div>
-              <label htmlFor="otherNames" className="block text-white mb-1">
-                Other names
-              </label>
-              <input
-                type="text"
-                id="otherNames"
-                placeholder="Enter other names"
-                className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
-              />
-            </div>
+            
             <div>
               <label htmlFor="userName" className="block text-white mb-1">
                 Username
               </label>
               <input
                 type="text"
-                id="userName"
+                id="username"
                 placeholder="Username"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                {
+                  ...register("username", { required: "not provided, minLength: 8" })
+                  }
               />
+               {errors.username && (<p className="text-red-500">{errors.username.message}</p>)}
             </div>
             <div>
               <label htmlFor="email" className="block text-white mb-1">
@@ -66,7 +107,11 @@ const SignUp = () => {
                 id="email"
                 placeholder="Enter your email"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                {
+                  ...register("email", { required: "Email is not provided" })
+                  }
               />
+              {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
             </div>
             <div>
               <label htmlFor="password" className="block text-white mb-1">
@@ -77,18 +122,27 @@ const SignUp = () => {
                 id="password"
                 placeholder="Enter your password"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-[2px] rounded-md"
+                {
+                  ...register("password", { required: "Password is not provided, minLength:8" })
+                  }
               />
+               {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
             </div>
             <div className="flex items-start p-4">
               <input
                 id="terms"
                 type="checkbox"
                 className="w-4 h-4 border"
+                {
+                  ...register("termsAndConditions", { required: "Please accept the terms and conditions" })
+                  }
               />
+              
               <label htmlFor="terms" className="ml-2 text-sm text-white">
                 I accept the <Link className="font-medium text-white underline" to="#">Terms and Conditions</Link>
               </label>
             </div>
+            {errors.termsAndConditions && (<p className="text-red-500">{errors.termsAndConditions.message}</p>)}
             <div className="flex justify-center">
               <button type="submit" className="text-[#10CC9F] text-lg font-bold m-4 pb-8 h-10 w-40 px-3 py-2 bg-white border-2 rounded-3xl hover:bg-[#00B0FF] hover:text-white">
                 Sign Up

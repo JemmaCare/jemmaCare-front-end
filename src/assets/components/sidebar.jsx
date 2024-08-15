@@ -1,4 +1,4 @@
-import { ArrowTopRightOnSquareIcon, BuildingStorefrontIcon, CalendarDaysIcon, PhotoIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import {CalendarDaysIcon, PhotoIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { CreditCardIcon } from '@heroicons/react/24/outline';
 import { LogOut, UserCheck } from 'lucide-react';
@@ -6,7 +6,7 @@ import { LogOut, UserCheck } from 'lucide-react';
 const Sidebar = () => {
     return (
         <div className='min-h-full max-h-screen flex'>
-            <div className="m-4 bg-black border border-white h-full shadow-lg w-64 flex flex-col justify-between rounded-xl">
+            <div className="m-4 bg-gray-600 border border-white h-full shadow-lg w-64 flex flex-col justify-between rounded-xl">
                 <h3 className='text-teal-500 text-xl font-bold mt-10 ml-5'>Jemma Care</h3>
                 <div className="flex py-6">
                     <ul className="space-y-2 w-full">
@@ -26,7 +26,7 @@ const Sidebar = () => {
                             </li>
                         </Link>
 
-                        <Link to='/admdashboard/support'>
+                        <Link to='/admdashboard/supportgroup'>
                             <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
                                 < UserCheck className=' hover:text-black' />
 
@@ -34,7 +34,7 @@ const Sidebar = () => {
                             </li>
                         </Link>
 
-                        <Link to='/admdashboard/reviews'>
+                        <Link to='/admdashboard/testimonial'>
                             <li className="flex items-center text-[18px] text-white space-x-4 p-4 hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer">
                                 <ShoppingBagIcon size className='size-7' />
                                 <span>Testimonials</span>

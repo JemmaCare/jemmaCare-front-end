@@ -1,13 +1,50 @@
 import jemmaSign from "../../images/jemmaSign.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import google from "../../images/google.png";
+import { useForm } from "react-hook-form";
+import { apiLogin } from "../../../services/auth";
+import { useState } from "react";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const navigate=useNavigate()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors } } = useForm();
+
+    const onSubmit = async (data) => {
+      console.log(data);
+      setIsSubmitting(true)
+      let payload = {
+        password: data.password,
+        email: data.email,
+        
+      };
+      
+      try {
+        const res = await apiLogin(payload);
+        console.log(res.data)
+        toast.success(res.data.message)
+        navigate("/onboarding")
+        
+      } catch (error) {
+        console.log(error)
+        toast.error("An error occured")
+        
+      } finally {
+        setIsSubmitting(false)
+      }
+    };
+
   return (
     <div className="flex items-center justify-center h-screen overflow-hidden">
       <div className="flex flex-col md:flex-row bg-white rounded-lg">
         <div className="w-full md:w-1/2">
-          <form className="bg-[#10CC9F] flex flex-col items-center justify-center h-full p-8 text-xl font-serif">
+          <form className="bg-[#10CC9F] flex flex-col items-center justify-center h-full p-8 text-xl font-serif" onSubmit={handleSubmit(onSubmit)}>
             <div className="w-3/4">
               <div className="mb-8 text-center">
                 <h1 className="text-3xl font-bold text-white">SIGN IN</h1>
@@ -21,8 +58,11 @@ const Login = () => {
                 id="email"
                 placeholder="email"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg mb-4"
+                {
+                  ...register("email", { required: "Email is not provided" })
+                  }
               />
-
+               {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
               <label htmlFor="password" className="block text-white mb-2 ml-4">
                 Password
               </label>
@@ -31,8 +71,11 @@ const Login = () => {
                 id="password"
                 placeholder="password"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-lg mb-8"
-              />
-
+                {
+                  ...register("password", { required: "Password is not provided, minLength:8" })
+                  }
+             />
+                {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
               <div className="flex justify-center">
                 <button
                   type="submit"

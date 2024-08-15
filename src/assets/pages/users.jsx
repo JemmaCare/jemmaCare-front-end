@@ -11,9 +11,9 @@ const Users = () => {
           <h3 className="font-bold text-lg sm:text-2xl text-center mb-8">Start Out Here</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <Link to="/signup">
-              <UsersCard image={user1} name="User" />
+              <UsersCard image={user1} name="Patient" />
             </Link>
-            <Link to="/therapist">
+            <Link to="/therapistlogin">
               <UsersCard image={tpImage} name="Therapist" />
             </Link>
           </div>

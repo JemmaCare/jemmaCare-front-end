@@ -1,8 +1,8 @@
-
+import React from 'react'
 
 const Overview = () => {
   return (
-    <div>overview</div>
+    <div>Overview</div>
   )
 }
 

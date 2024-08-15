@@ -20,7 +20,7 @@ const Esther = () => {
                     <Link to="tel:+233547978203" aria-label="Call Esther">
                         <PhoneCall className="w-6 h-6 text-gray-600 hover:text-[#10CC9F]" />
                     </Link>
-                    <Link to="/onboarding" aria-label="Schedule with Esther">
+                    <Link to="/datetime" aria-label="Schedule with Esther">
                         <Calendar className="w-6 h-6 text-gray-600 hover:text-[#10CC9F]" />
                     </Link>
                 </div>
@@ -62,12 +62,7 @@ const Esther = () => {
                     associated with mental illness and encouraging more people to seek
                     help.
                 </p>
-                <p className="text-lg leading-relaxed mb-4">
-                    Now, as she begins using our mental health app, Esther brings her
-                    wealth of experience and passion for mental health to the platform.
-                    Her insights and feedback will be invaluable in ensuring that the app
-                    meets the needs of both healthcare professionals and patients alike.
-                </p>
+                
             </div>
         </div>
     );

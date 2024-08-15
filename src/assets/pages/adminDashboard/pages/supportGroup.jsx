@@ -2,7 +2,7 @@
 
 const SupportGroup = () => {
   return (
-    <div>support group</div>
+    <div>Support group</div>
   )
 }
 
