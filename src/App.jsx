@@ -48,6 +48,7 @@ import DateTimePicker from "./assets/pages/dateTimePicker";
 import CommunicationMethod from "./assets/pages/communicationMethod";
 import AddTestimonial from "./assets/pages/adminDashboard/pages/addTestimonial";
 import Testimonial from "./assets/pages/adminDashboard/pages/testimonial";
+import Bipolar from "./assets/pages/bipolar";
 
 
 
@@ -215,6 +216,10 @@ import Testimonial from "./assets/pages/adminDashboard/pages/testimonial";
       {
         path: "communication",
         element: <CommunicationMethod/>
+      },
+      {
+        path: "bipolar",
+        element: <Bipolar/>
       },
 
 

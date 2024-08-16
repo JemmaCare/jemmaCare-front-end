@@ -16,6 +16,11 @@ const Login = () => {
     watch,
     formState: { errors } } = useForm();
 
+    const addToLocalStorage = (accessToken,) => {
+      localStorage.setItem("accessToken", accessToken);
+      
+    };
+
     const onSubmit = async (data) => {
       console.log(data);
       setIsSubmitting(true)
@@ -28,6 +33,9 @@ const Login = () => {
       try {
         const res = await apiLogin(payload);
         console.log(res.data)
+
+        addToLocalStorage(res.data.accessToken, res.data.user);
+
         toast.success(res.data.message)
         navigate("/onboarding")
         

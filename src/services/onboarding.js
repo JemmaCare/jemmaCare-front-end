@@ -1,5 +1,5 @@
 import { apiClient } from "./config"
 
 export const apiPatientResponses= async(payload) => {
-    return apiClient.post("/users/auth/profile",payload);
+    return apiClient.post("/patientresponses",payload);
 };

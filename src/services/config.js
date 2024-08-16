@@ -9,8 +9,16 @@ export const apiClient = axios.create(
 );
 
 
-// const token = localStorage.getItem("accessToken");
+export const getDetails = () => {
+    const user = {};
+  
+    user.token = localStorage.getItem("accessToken");
+  
+    return user;
+  };
 
-// if(token){
-//     apiClient.defaults.headers.common["Authorization"] = `Bearer ${token}`
-// }
+const token = localStorage.getItem("accessToken");
+
+if(token){
+    apiClient.defaults.headers.common["Authorization"] = `Bearer ${token}`
+}

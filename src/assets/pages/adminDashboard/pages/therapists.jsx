@@ -1,16 +1,16 @@
 
-
+import { useNavigate } from "react-router-dom";
 import K from "../../../constants";
 import { Edit, TrashIcon } from "lucide-react";
 import PagesLayout from "../layouts/pagesLayouts";
 
 const Therapists = () => {
-  
+  const navigate = useNavigate();
   return (
     <PagesLayout
       headerText="THERAPISTS"
       buttonText="Add new"
-      onClick={() => ("/admdashboard/therapists/add")}
+      onClick={() => navigate("/admdashboard/therapists/add")}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         {K.THERAPISTS.map(
