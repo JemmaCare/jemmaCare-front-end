@@ -62,6 +62,9 @@ const OnboardingForms = () => {
               <select
                 id="therapyType"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-md"
+                {
+                  ...register("therapyType", { required: "Therapy Type name is not provided" })
+                  }
               >
                 <option value="" disabled selected>Bipolar</option>
                 <option value="cognitive">Depression</option>
@@ -72,9 +75,7 @@ const OnboardingForms = () => {
                 <option value="psychodynamic">Body Dysmorphic Disorder</option>
                 <option value="family">Obssessive Compulsive Disorder</option>
                 <option value="group">Postpartum Depression</option>
-                {
-                  ...register("therapyType", { required: "Therapy Type name is not provided" })
-                  }
+               
               </select>
               {errors.therapyType && (<p className="text-red-500">{errors.therapyType.message}</p>)}
             </div>
@@ -85,6 +86,9 @@ const OnboardingForms = () => {
               <select
                 id="age"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-md"
+                {
+                  ...register("age", { required: "Age is not provided" })
+                  }
               >
                 <option value="" disabled selected>Select Age Range</option>
                 <option value="18-25">18-25</option>
@@ -92,9 +96,7 @@ const OnboardingForms = () => {
                 <option value="36-45">36-45</option>
                 <option value="46-60">46-60</option>
                 <option value="60+">60+</option>
-                {
-                  ...register("age", { required: "Age is not provided" })
-                  }
+                
               </select>
               {errors.age && (<p className="text-red-500">{errors.age.message}</p>)}
             </div>
@@ -106,15 +108,16 @@ const OnboardingForms = () => {
               <select
                 id="nationality"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-md"
+                {
+                  ...register("nationality", { required: "not provided," })
+                  }
               >
                 <option value="" disabled selected>Nationality</option>
                 <option value="ghana">Ghana</option>
                 <option value="nigeria">Nigeria</option>
                 <option value="zimbabwe">Zimbabwe</option>
                 <option value="uganda">Uganda</option>
-                {
-                  ...register("nationality", { required: "not provided," })
-                  }
+                
               </select>
               {errors.nationality && (<p className="text-red-500">{errors.nationality.message}</p>)}
             </div>
@@ -155,13 +158,14 @@ const OnboardingForms = () => {
               <select
                 id="gender"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-md"
+                {
+                  ...register("gender", { required: "gender is not provided," })
+                  }
               >
                 <option value="" disabled selected>Gender</option>
                 <option value="male">male</option>
                 <option value="female">female</option>
-                {
-                  ...register("gender", { required: "gender is not provided," })
-                  }
+                
               </select>
               {errors.gender && (<p className="text-red-500">{errors.gender.message}</p>)}
             </div>
@@ -172,13 +176,14 @@ const OnboardingForms = () => {
               <select
                 id="previousTherapy"
                 className="bg-white h-10 w-full px-2 py-1 border-gray-400 border-2 rounded-md"
+                {
+                  ...register("previousTherapy", { required: "No option selected" })
+                  }
               >
                 <option value="" disabled selected>Previous Therapy</option>
                 <option value="yes">yes</option>
                 <option value="no">no</option>
-                {
-                  ...register("previousTherapy", { required: "No option selected" })
-                  }
+                
               </select>
               {errors.previousTherapy && (<p className="text-red-500">{errors.previousTherapy.message}</p>)}
             </div>
