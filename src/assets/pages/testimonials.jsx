@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import TestimonialsCard from "../components/therapistsCard";
+import TestimonialsCard from "../components/testimonialsCard";
 import afrosmile from "../images/afrosmile.jpeg";
 import nhyira from "../images/nhyira.webp";
 import rutela2 from "../images/rutela2.png";
