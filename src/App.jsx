@@ -23,18 +23,6 @@ import User from "./pages/adminDashboard/pages/user";
 import AddUser from "./pages/adminDashboard/pages/addUser";
 import Therapists from "./pages/adminDashboard/pages/therapists";
 import AddTherapists from "./pages/adminDashboard/pages/addTherapists";
-import Esther from "./pages/esther";
-import Gracie from "./pages/gracie";
-import Josh from "./pages/josh";
-import Kafui from "./pages/kafui";
-import Marigold from "./pages/marigold";
-import Martin from "./pages/martin";
-import Nhyira from "./pages/nhyira";
-import Nuna from "./pages/nuna";
-import Owarewaa from "./pages/owarewaa";
-import Reggie from "./pages/reggie";
-import Rich from "./pages/rich";
-import Ruth from "./pages/ruth";
 import OnboardingForms from "./pages/onboardingForms";
 import TherapistOnboarding from "./pages/therapistOnboarding";
 import TherapistLogin from "./pages/auth/therapistLogin";
@@ -42,6 +30,7 @@ import Appointment from "./pages/appointment";
 import DateTimePicker from "./pages/dateTimePicker";
 import CommunicationMethod from "./pages/communicationMethod";
 import Bipolar from "./pages/bipolar";
+import TherapistDetails from "./pages/therapistDetails";
 
   const router = createBrowserRouter(
     [
@@ -71,7 +60,7 @@ import Bipolar from "./pages/bipolar";
             path: "/testimonials", element: <Testimonials/>
           },
           {
-            path: "therapist",
+            path: "all-therapists",
             element: <Therapist/>,
           },
         ]
@@ -137,53 +126,10 @@ import Bipolar from "./pages/bipolar";
         ]
       },
       {
-        path: "esther",
-        element: <Esther/>
+        path: "all-therapists/:id",
+        element: <TherapistDetails/>
       },
-      {
-        path: "gracie",
-        element: <Gracie/>
-      },
-      {
-        path: "josh",
-        element: <Josh/>
-      },
-      {
-        path: "kafui",
-        element: <Kafui/>
-      },
-      {
-        path: "marigold",
-        element: <Marigold/>
-      },
-      {
-        path: "martin",
-        element: <Martin/>
-      },
-      {
-        path: "nhyira",
-        element: <Nhyira/>
-      },
-      {
-        path: "nuna",
-        element: <Nuna/>
-      },
-      {
-        path: "owarewaa",
-        element: <Owarewaa/>
-      },
-      {
-        path: "reggie",
-        element: <Reggie/>
-      },
-      {
-        path: "rich",
-        element: <Rich/>
-      },
-      {
-        path: "ruth",
-        element: <Ruth/>
-      },
+      
       {
         path: "onboarding",
         element: <OnboardingForms/>

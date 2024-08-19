@@ -12,14 +12,14 @@ const DateTimePicker = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+
 
   const onSubmit = async (data) => {
     console.log(data);
     setIsSubmitting(true);
     
     let payload = {
-      date: selected, 
+      date: selectedDate, 
     };
 
     try {
@@ -44,7 +44,7 @@ const DateTimePicker = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="relative bg-white p-8 rounded-lg shadow-xl w-full max-w-lg">
+      <form className="relative bg-white p-8 rounded-lg shadow-xl w-full max-w-lg">
         <h2 className="text-teal-600 font-bold text-2xl text-center mb-4">
           Book Your Appointment
         </h2>
@@ -66,10 +66,10 @@ const DateTimePicker = () => {
           placeholderText="Click to select a date"
           className="w-full p-3 border-2 border-teal-500 rounded-lg text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
-        {errors.date && (<p className="text-red-500">{errors.date.message}</p>)}
+       
         <div className="flex justify-center mt-6">
           <button
-            type="submit"
+           onClick={onSubmit}
             className="text-white text-lg font-bold h-12 w-full max-w-xs px-6 py-2 bg-teal-600 border-2 border-teal-600 rounded-3xl hover:bg-teal-500 hover:text-black transition duration-300 ease-in-out"
             disabled={isSubmitting}
           >

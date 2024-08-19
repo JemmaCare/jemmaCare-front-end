@@ -1,22 +1,48 @@
 import { Calendar } from "lucide-react";
-import esther from "../assets/images/esther.png";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import { apiGetTherapistById } from "../services/therapist";
+import { useState,useEffect } from "react";
 
-const Esther = () => {
+
+const TherapistDetails = () => {
+const params = useParams()
+  console.log(params)
+
+  const [therapist, setTherapist] = useState({})
+
+  const fetchTherapist = async () => {
+
+
+    try {
+      const res = await apiGetTherapistById(params.id);
+      console.log(res.data);
+      setTherapist(res.data)
+
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occurred");
+    }
+  };
+
+  useEffect(() => {
+
+    fetchTherapist()
+  }, [])
+
   return (
     <div className="flex flex-col items-start justify-center min-h-screen px-4 md:px-16 lg:px-24 w-full md:w-4/5 lg:w-3/5 mt-2">
       <div className="flex items-start space-x-6 mb-8">
         <img
-          src={esther}
+          src={`https://savefiles.org/${therapist?.profilePicture}?shareable_link=330`} name={`${therapist?.userId.firstName} ${therapist?.userId.lastName}`}
           alt="Esther"
           className="rounded-full w-44 h-44 object-cover"
         />
        
       </div>
       <div className="flex flex-col space-y-4">
-      <p>Dr. Esther Agbozo</p>
+      
           <Link 
-            to="/datetime" 
+            to={`/all-therapists/${therapist.id}`}
             aria-label="Book Appointment with Esther" 
             className="bg-teal-200 text-teal-700 font-semibold p-4 rounded-lg shadow-sm flex items-center space-x-2 hover:bg-teal-300 transition duration-300"
           >
@@ -51,4 +77,4 @@ const Esther = () => {
   );
 };
 
-export default Esther;
+export default TherapistDetails;

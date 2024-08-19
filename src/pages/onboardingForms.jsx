@@ -14,9 +14,7 @@ const OnboardingForms = () => {
     formState: { errors },
   } = useForm();
 
-  const addToLocalStorage = (accessToken) => {
-    localStorage.setItem("accessToken", accessToken);
-  };
+  
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -37,10 +35,10 @@ const OnboardingForms = () => {
       const res = await apiPatientResponses(payload);
       console.log(res.data);
 
-      addToLocalStorage(res.data.accessToken,);
+      
 
       toast.success(res.data.message);
-      navigate("/therapist");
+      navigate("/all-therapists");
     } catch (error) {
       console.log(error);
       toast.error("An error occurred");
