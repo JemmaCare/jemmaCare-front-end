@@ -65,11 +65,33 @@ const Therapist = () => {
           <Link to="/rich">
             <TherapistsCard image={rich} name="Rich Richardson" text="Body Therapist"/>
           </Link>
-
           <Link to="/ruth">
             <TherapistsCard image={ceo} name="Ruth Angelo" text="Mental Health Advocate"/>
           </Link>
-         
+          <Link to="/esther">
+            <TherapistsCard image={esther} name="Esther Agbozo" text="Medical Doctor" />
+          </Link>
+          <Link to="/gracie">
+            <TherapistsCard image={gracie} name="Gracie Awudi" text="Clinical Psychologist"/>
+          </Link>
+          <Link to="/josh">
+            <TherapistsCard image={josh} name="Josh Manford" text="Psychiatrist" />
+          </Link>
+          <Link to="/kafui">
+            <TherapistsCard image={kafui} name="Kafui Danku" text="Clinical Social Worker" />
+          </Link>
+          <Link to="/marigold">
+            <TherapistsCard image={marigold} name="Marigold Hanson" text="Psychiatric Nurse"/>
+          </Link>
+          <Link to="/martin">
+            <TherapistsCard image={user2} name="Martin Addo" text="Anxiety Expert"/>
+          </Link>
+          <Link to="/nhyira">
+            <TherapistsCard image={nhyira} name="Nhyira Oduro" text="Depression Expert"/>
+          </Link>
+          <Link to="/nuna">
+            <TherapistsCard image={nuna} name="Nuna Anum" text="Mental Health Avocate"/>
+          </Link>
 
 
         </div>
