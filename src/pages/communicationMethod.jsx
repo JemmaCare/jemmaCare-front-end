@@ -1,5 +1,7 @@
 import { Phone, Video } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const CommunicationMethod = ({ selectedMethod, setSelectedMethod }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +10,38 @@ const CommunicationMethod = ({ selectedMethod, setSelectedMethod }) => {
     setSelectedMethod(method);
     setIsOpen(false);
   };
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const navigate=useNavigate()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors } } = useForm();
+
+  
+    const onSubmit = async (data) => {
+      console.log(data);
+      setIsSubmitting(true)
+      let payload = {
+        date: data.date,
+        
+      };
+      
+      try {
+        const res = await apiAppointmentDateTime(payload);
+        console.log(res.data)
+
+        toast.success(res.data.message)
+        navigate("/appointment")
+        
+      } catch (error) {
+        console.log(error)
+        toast.error("An error occured")
+        
+      } finally {
+        setIsSubmitting(false)
+      }
+    };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-teal-400 to-teal-600">

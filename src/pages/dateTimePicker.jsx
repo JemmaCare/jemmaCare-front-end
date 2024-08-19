@@ -3,61 +3,49 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import onboarding from "../assets/images/onboarding.png";
 import { useForm } from "react-hook-form";
-import { apiAppointmentDateTime, } from "../services/datetime";
+import { apiAppointmentDateTime } from "../services/datetime";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const DateTimePicker = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const navigate=useNavigate()
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors } } = useForm();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+  
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
-    const addToLocalStorage = (accessToken,) => {
-      localStorage.setItem("accessToken", accessToken);
-      
+  const onSubmit = async (data) => {
+    console.log(data);
+    setIsSubmitting(true);
+    
+    let payload = {
+      date: selected, 
     };
 
-    const onSubmit = async (data) => {
-      console.log(data);
-      setIsSubmitting(true)
-      let payload = {
-        date: data.date,
-        
-      };
-      
-      try {
-        const res = await apiAppointmentDateTime(payload);
-        console.log(res.data)
+    try {
+      const res = await apiAppointmentDateTime(payload);
+      console.log(res.data);
 
-        addToLocalStorage(res.data.accessToken,);
-
-        toast.success(res.data.message)
-        navigate("/communication")
-        
-      } catch (error) {
-        console.log(error)
-        toast.error("An error occured")
-        
-      } finally {
-        setIsSubmitting(false)
-      }
-    };
+      toast.success(res.data.message);
+      navigate("/communication");
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occurred");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-teal-300 p-6" onSubmit={handleSubmit(onSubmit)}>
+    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-teal-300 p-6">
       <img
         src={onboarding}
         alt="background image"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       />
 
-      <div className="relative bg-white p-8 rounded-lg shadow-xl w-full max-w-lg">
-        <h2 className="text-teal-600 font-bold text-2xl text-center mb-4" >
+      <form onSubmit={handleSubmit(onSubmit)} className="relative bg-white p-8 rounded-lg shadow-xl w-full max-w-lg">
+        <h2 className="text-teal-600 font-bold text-2xl text-center mb-4">
           Book Your Appointment
         </h2>
         <label
@@ -77,20 +65,18 @@ const DateTimePicker = () => {
           dateFormat="Pp"
           placeholderText="Click to select a date"
           className="w-full p-3 border-2 border-teal-500 rounded-lg text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
-          {
-            ...register("date", { required: "Date or time is not provided" })
-            }
         />
         {errors.date && (<p className="text-red-500">{errors.date.message}</p>)}
         <div className="flex justify-center mt-6">
           <button
             type="submit"
             className="text-white text-lg font-bold h-12 w-full max-w-xs px-6 py-2 bg-teal-600 border-2 border-teal-600 rounded-3xl hover:bg-teal-500 hover:text-black transition duration-300 ease-in-out"
+            disabled={isSubmitting}
           >
-            Continue
+            {isSubmitting ? "Submitting..." : "Continue"}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
