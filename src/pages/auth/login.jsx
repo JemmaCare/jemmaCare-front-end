@@ -34,7 +34,7 @@ const Login = () => {
         const res = await apiLogin(payload);
         console.log(res.data)
 
-        addToLocalStorage(res.data.accessToken, res.data.user);
+        addToLocalStorage(res.data.accessToken,);
 
         toast.success(res.data.message)
         navigate("/onboarding")

@@ -70,12 +70,13 @@ import Bipolar from "./pages/bipolar";
           {
             path: "/testimonials", element: <Testimonials/>
           },
+          {
+            path: "therapist",
+            element: <Therapist/>,
+          },
         ]
       },
-      {
-        path: "therapist",
-        element: <Therapist/>,
-      },
+     
       { path: "/signup", element: <SignUp/> },
 
       {

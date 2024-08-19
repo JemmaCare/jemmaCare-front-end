@@ -2,12 +2,54 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import onboarding from "../assets/images/onboarding.png";
+import { useForm } from "react-hook-form";
+import { apiAppointmentDateTime, } from "../services/datetime";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const DateTimePicker = () => {
   const [selectedDate, setSelectedDate] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const navigate=useNavigate()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors } } = useForm();
+
+    const addToLocalStorage = (accessToken,) => {
+      localStorage.setItem("accessToken", accessToken);
+      
+    };
+
+    const onSubmit = async (data) => {
+      console.log(data);
+      setIsSubmitting(true)
+      let payload = {
+        date: data.date,
+        
+      };
+      
+      try {
+        const res = await apiAppointmentDateTime(payload);
+        console.log(res.data)
+
+        addToLocalStorage(res.data.accessToken,);
+
+        toast.success(res.data.message)
+        navigate("/communication")
+        
+      } catch (error) {
+        console.log(error)
+        toast.error("An error occured")
+        
+      } finally {
+        setIsSubmitting(false)
+      }
+    };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-teal-300 p-6">
+    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-teal-500 to-teal-300 p-6" onSubmit={handleSubmit(onSubmit)}>
       <img
         src={onboarding}
         alt="background image"
@@ -15,7 +57,7 @@ const DateTimePicker = () => {
       />
 
       <div className="relative bg-white p-8 rounded-lg shadow-xl w-full max-w-lg">
-        <h2 className="text-teal-600 font-bold text-2xl text-center mb-4">
+        <h2 className="text-teal-600 font-bold text-2xl text-center mb-4" >
           Book Your Appointment
         </h2>
         <label
@@ -35,7 +77,11 @@ const DateTimePicker = () => {
           dateFormat="Pp"
           placeholderText="Click to select a date"
           className="w-full p-3 border-2 border-teal-500 rounded-lg text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          {
+            ...register("date", { required: "Date or time is not provided" })
+            }
         />
+        {errors.date && (<p className="text-red-500">{errors.date.message}</p>)}
         <div className="flex justify-center mt-6">
           <button
             type="submit"
