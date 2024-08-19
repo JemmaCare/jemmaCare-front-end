@@ -1,57 +1,47 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css'
-
-import LandingPage from "./assets/pages/landingPage";
-import SignUp from "./assets/pages/auth/signUp";
-import Login from "./assets/pages/auth/login";
-import GoogleSignup from "./assets/pages/googleSignup";
-
-import Support from "./assets/pages/supportForm";
-import Articles from "./assets/pages/adminDashboard/pages/articles";
-
-import AddArticles from "./assets/pages/adminDashboard/pages/addArticles";
-import AddSupport from "./assets/pages/adminDashboard/pages/addSupport";
-
-import AddUser from "./assets/pages/adminDashboard/pages/addUser";
-
-import Overview from "./assets/pages/adminDashboard/pages/testimonial";
-
-
-
-import RootLayout from "./assets/layouts/rootLayout";
-import Services from "./assets/pages/services";
-import About from "./assets/pages/about";
-import Testimonials from "./assets/pages/testimonials";
-import Esther from "./assets/pages/pages/esther";
-import Ruth from "./assets/pages/pages/ruth";
-import Rich from "./assets/pages/pages/rich";
-import Reggie from "./assets/pages/pages/reggie";
-import Owarewaa from "./assets/pages/pages/owarewaa";
-import Nuna from "./assets/pages/pages/nuna";
-import Nhyira from "./assets/pages/pages/nhyira";
-import Martin from "./assets/pages/pages/martin";
-import Marigold from "./assets/pages/pages/marigold";
-import Kafui from "./assets/pages/pages/kafui";
-import Josh from "./assets/pages/pages/josh";
-import Gracie from "./assets/pages/pages/gracie";
-import SupportGroup from "./assets/pages/adminDashboard/pages/supportGroup";
-import Therapist from "./assets/pages/therapist";
-import AdmDashboardLayout from "./assets/pages/adminDashboard/layouts";
-import AddTherapists from "./assets/pages/adminDashboard/pages/addTherapists";
-import Therapists from "./assets/pages/adminDashboard/pages/therapists";
-import User from "./assets/pages/adminDashboard/pages/user";
-import OnboardingForms from "./assets/pages/onboardingForms";
-import TherapistOnboarding from "./assets/pages/therapistOnboarding";
-import TherapistLogin from "./assets/pages/auth/therapistLogin";
-import Appointment from "./assets/pages/appointment";
-import DateTimePicker from "./assets/pages/dateTimePicker";
-import CommunicationMethod from "./assets/pages/communicationMethod";
-import AddTestimonial from "./assets/pages/adminDashboard/pages/addTestimonial";
-import Testimonial from "./assets/pages/adminDashboard/pages/testimonial";
-import Bipolar from "./assets/pages/bipolar";
-
-
-
+import RootLayout from "./layouts/rootLayout";
+import LandingPage from "./pages/landingPage";
+import About from "./pages/about";
+import Services from "./pages/services";
+import Support from "./pages/supportForm"
+import Article from "./pages/article";
+import Testimonials from "./pages/testimonials";
+import Therapist from "./pages/therapist";
+import SignUp from "./pages/auth/signUp";
+import Login from "./pages/auth/login";
+import GoogleSignup from "./pages/googleSignup";
+import AdmDashboardLayout from "./pages/adminDashboard/layouts/index";
+import Overview from "./pages/adminDashboard/pages/overview";
+import Articles from "./pages/adminDashboard/pages/articles";
+import AddArticles from "./pages/adminDashboard/pages/addArticles";
+import SupportGroup from "./pages/adminDashboard/pages/supportGroup";
+import AddSupport from "./pages/adminDashboard/pages/addSupport";
+import Testimonial from "./pages/adminDashboard/pages/testimonial";
+import AddTestimonial from "./pages/adminDashboard/pages/addTestimonial";
+import User from "./pages/adminDashboard/pages/user";
+import AddUser from "./pages/adminDashboard/pages/addUser";
+import Therapists from "./pages/adminDashboard/pages/therapists";
+import AddTherapists from "./pages/adminDashboard/pages/addTherapists";
+import Esther from "./pages/esther";
+import Gracie from "./pages/gracie";
+import Josh from "./pages/josh";
+import Kafui from "./pages/kafui";
+import Marigold from "./pages/marigold";
+import Martin from "./pages/martin";
+import Nhyira from "./pages/nhyira";
+import Nuna from "./pages/nuna";
+import Owarewaa from "./pages/owarewaa";
+import Reggie from "./pages/reggie";
+import Rich from "./pages/rich";
+import Ruth from "./pages/ruth";
+import OnboardingForms from "./pages/onboardingForms";
+import TherapistOnboarding from "./pages/therapistOnboarding";
+import TherapistLogin from "./pages/auth/therapistLogin";
+import Appointment from "./pages/appointment";
+import DateTimePicker from "./pages/dateTimePicker";
+import CommunicationMethod from "./pages/communicationMethod";
+import Bipolar from "./pages/bipolar";
 
   const router = createBrowserRouter(
     [
@@ -63,7 +53,7 @@ import Bipolar from "./assets/pages/bipolar";
 
             index: true,
     
-            element: <LandingPage />,
+            element: <LandingPage/>,
           },
           {
             path: "about", element: <About/>
@@ -72,10 +62,10 @@ import Bipolar from "./assets/pages/bipolar";
             path: "/services", element: <Services/>
           },
           {
-            path: "/supportform", element: <Support />
+            path: "/supportform", element: <Support/>
           },
           {
-            path: "/articles", element: <Articles />
+            path: "/article", element: <Article />
           },
           {
             path: "/testimonials", element: <Testimonials/>
@@ -84,16 +74,16 @@ import Bipolar from "./assets/pages/bipolar";
       },
       {
         path: "therapist",
-        element: <Therapist />,
+        element: <Therapist/>,
       },
-      { path: "/signup", element: <SignUp /> },
+      { path: "/signup", element: <SignUp/> },
 
       {
-        path: "/login", element: <Login />
+        path: "/login", element: <Login/>
 
       },
       {
-        path: "/google", element: <GoogleSignup />
+        path: "/google", element: <GoogleSignup/>
       },
       {
         path: "/admdashboard", element: <AdmDashboardLayout />,
@@ -132,7 +122,7 @@ import Bipolar from "./assets/pages/bipolar";
           },
           {
             path: "user/add",
-            element: <AddUser />
+            element: <AddUser/>
           },
           {
             path: "therapists",
