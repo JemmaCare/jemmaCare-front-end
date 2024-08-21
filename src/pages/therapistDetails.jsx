@@ -33,7 +33,8 @@ const params = useParams()
     <div className="flex flex-col items-start justify-center min-h-screen px-4 md:px-16 lg:px-24 w-full md:w-4/5 lg:w-3/5 mt-2">
       <div className="flex items-start space-x-6 mb-8">
         <img
-          src={`https://savefiles.org/${therapist?.profilePicture}?shareable_link=330`} name={`${therapist?.userId.firstName} ${therapist?.userId.lastName}`}
+          src={`https://savefiles.org/${therapist?.profilePicture}?shareable_link=330`} 
+          // name={`${therapist?.userId.firstName} ${therapist?.userId.lastName}`}
           alt="Esther"
           className="rounded-full w-44 h-44 object-cover"
         />
