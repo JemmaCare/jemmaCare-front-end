@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="bg-[#10CC9F] text-white py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Newsletter Section */}
+        
           <div className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0">
             <p className="font-serif text-lg md:text-xl mb-2">Subscribe to our newsletters and articles</p>
             <div className="flex items-center bg-white border-2 rounded-full p-1 w-full max-w-md mx-auto md:mx-0">
